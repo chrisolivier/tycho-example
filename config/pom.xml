@@ -2,16 +2,17 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.compufirst.tycho</groupId>
     <artifactId>com.compufirst.config</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>com.compufirst.tycho</groupId>
         <artifactId>com.compufirst.tycho.root</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <modules>
+    	<module>com.compufirst.configuration</module>
         <module>com.compufirst.update</module>
         <module>com.compufirst.product</module>
         <module>com.compufirst.target</module>
