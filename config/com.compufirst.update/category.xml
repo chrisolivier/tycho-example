@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.compufirst.feature_1.0.0.qualifier.jar" id="com.compufirst.feature" version="1.0.0.qualifier">
+      <category name="rcptycho"/>
+   </feature>
+   <category-def name="rcptycho" label="Rcp Tycho"/>
+</site>
