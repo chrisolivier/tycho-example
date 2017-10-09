@@ -20,6 +20,10 @@
                name="appName"
                value="com.compufirst.rcp">
          </property>
+         <property
+               name="applicationXMI"
+               value="com.compufirst.common/CommonUi.e4xmi">
+         </property>
       </product>
    </extension>
 

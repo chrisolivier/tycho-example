@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="com.compufirst.target.rap" sequenceNumber="1">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.rap.equinox.target.feature.feature.group" version="3.2.0.20170613-1148"/>
+<unit id="org.eclipse.rap.examples.feature.feature.group" version="3.2.0.20170321-0751"/>
+<unit id="org.eclipse.rap.feature.feature.group" version="3.2.0.20170609-1144"/>
+<unit id="org.eclipse.rap.sdk.feature.feature.group" version="3.2.0.20170609-1144"/>
+<repository location="http://download.eclipse.org/rt/rap/3.2/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.rap.e4.equinox.target.feature.feature.group" version="3.2.0.20170613-1148"/>
+<unit id="org.eclipse.rap.e4.examples.feature.feature.group" version="3.2.0.20170609-0854"/>
+<unit id="org.eclipse.rap.e4.feature.feature.group" version="3.2.0.20170613-0736"/>
+<unit id="org.eclipse.rap.e4.sdk.feature.feature.group" version="3.2.0.20170613-0736"/>
+<repository location="http://download.eclipse.org/rt/rap/3.2/e4"/>
+</location>
+</locations>
+</target>
