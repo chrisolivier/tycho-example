@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="com.compufirst.feature"
-      label="Feature"
+      id="com.compufirst.feature.rap"
+      label="Rap"
       version="1.1.0.qualifier">
 
    <description url="http://www.example.com/description">
@@ -17,21 +17,21 @@
    </license>
 
    <plugin
-         id="com.compufirst.plugin"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.compufirst.rcp"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="com.compufirst.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.compufirst.rap"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.compufirst.plugin"
          download-size="0"
          install-size="0"
          version="0.0.0"

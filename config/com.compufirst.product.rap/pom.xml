@@ -1,0 +1,106 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.compufirst.tycho</groupId>
+		<artifactId>com.compufirst.config</artifactId>
+		<version>1.1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.compufirst.tycho</groupId>
+	<artifactId>com.compufirst.rap.product</artifactId>
+	<packaging>eclipse-repository</packaging>
+	<version>1.1.0-SNAPSHOT</version>
+
+	<properties>
+		<war-filename>rap</war-filename>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<includeAllDependencies>true</includeAllDependencies>
+				</configuration>
+			</plugin>
+			<!-- Configure the p2 director -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<id>materialize-products</id>
+						<goals>
+							<goal>materialize-products</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>archive-products</id>
+						<goals>
+							<goal>archive-products</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Remove javax.servlet from the bundles.info -->
+			<plugin> 
+				<groupId>com.google.code.maven-replacer-plugin</groupId> 
+				<artifactId>maven-replacer-plugin</artifactId>
+				<version>${replacer.version}</version> 
+				<executions> 
+					<execution>
+						<phase>verify</phase> 
+						<goals> 
+							<goal>replace</goal> 
+						</goals> 
+					</execution> 
+				</executions> 
+				<configuration> 
+					<file>target/products/${project.artifactId}/linux/gtk/x86_64/configuration/config.ini</file> 
+					<replacements>
+						<replacement>
+							<token>osgi.bundles=</token>
+							<value>osgi.bundles=org.eclipse.equinox.servletbridge.extensionbundle,</value> 
+						</replacement>
+						<replacement> 
+							<token>reference\\:file\\:javax.servlet.*?jar@4,</token> 
+							<value></value> 
+						</replacement>
+					</replacements>
+					<regexFlags> 
+						<regexFlag>CASE_INSENSITIVE</regexFlag> 
+						<regexFlag>UNIX_LINES</regexFlag>
+					</regexFlags> 
+				</configuration> 
+			</plugin>
+
+			<!-- Configure the assembly plugin to zip the war file -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${assembly.version}</version>
+				<configuration>
+					<descriptors>
+						<descriptor>assembly.xml</descriptor>
+					</descriptors>
+					<!-- Configure the war's filename -->
+					<finalName>${war-filename}</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

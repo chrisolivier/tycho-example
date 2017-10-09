@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Rap
 Bundle-SymbolicName: com.compufirst.rap
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: com.compufirst.rap.Activator
 Bundle-Vendor: COMPUFIRST
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -1,20 +1,36 @@
 <project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.compufirst.tycho</groupId>
-    <artifactId>com.compufirst.config</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.compufirst.tycho</groupId>
+	<artifactId>com.compufirst.config</artifactId>
+	<version>1.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-    <parent>
-        <groupId>com.compufirst.tycho</groupId>
-        <artifactId>com.compufirst.tycho.root</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
-    </parent>
+	<parent>
+		<groupId>com.compufirst.tycho</groupId>
+		<artifactId>com.compufirst.tycho.root</artifactId>
+		<version>1.1.0-SNAPSHOT</version>
+	</parent>
 
-    <modules>
-    	<module>com.compufirst.configuration</module>
-        <module>com.compufirst.update</module>
-        <module>com.compufirst.product</module>
-        <module>com.compufirst.target</module>
-    </modules>
+	<modules>
+		<module>com.compufirst.configuration</module>
+	</modules>
+
+
+	<profiles>
+		<profile>
+			<id>rcp</id>
+			<modules>
+				<module>com.compufirst.update</module>
+				<module>com.compufirst.product</module>
+				<module>com.compufirst.target</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>rap</id>
+			<modules>
+				<module>com.compufirst.product.rap</module>
+				<module>com.compufirst.target.rap</module>
+			</modules>
+		</profile>
+	</profiles>
 </project>
